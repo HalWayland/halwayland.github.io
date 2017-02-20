@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Import Material UI -->
+    <link rel="stylesheet" href="css/material.css" />
+    <script src="javascript/material.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Import Fonts from Google -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Montserrat|Roboto+Slab" type="text/javascript" rel="stylesheet">
+    <!-- Import Katex -->
+    <link rel="stylesheet" type="text/css" href="css/katex.css">
+    <script type="text/javascript" src="javascript/katex.js"></script>
+  </head>
+  <body>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Button
+    </button>
+    <!-- Rendering KaTeX -->
+    <p><span id="mykatex1">...</span></p>
+    <script>katex.render("f(a,b,c) = (a^2+b^2+c^2)^3", mykatex1);</script>
+    <!-- End of KaTeX -->
+    <h1>Text for testing the Font</h1>
+  </body>
+</html>
