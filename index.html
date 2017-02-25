@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Import Material UI -->
-    <link rel="stylesheet" href="css/material.css" />
-    <script src="javascript/material.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- Import Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!-- Import Fonts from Google -->
-    <link href="https://fonts.googleapis.com/css?family=Fira+Mono|Montserrat|Roboto+Slab" type="text/javascript" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Merriweather|Montserrat" rel="stylesheet">
+    <!-- Import FontAwesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- Import Katex -->
-    <link rel="stylesheet" type="text/css" href="css/katex.css">
-    <script type="text/javascript" src="javascript/katex.js"></script>
-  </head>
-  <body>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  Button
-    </button>
-    <!-- Rendering KaTeX -->
-    <p><span id="mykatex1">...</span></p>
-    <script>katex.render("f(a,b,c) = (a^2+b^2+c^2)^3", mykatex1);</script>
-    <!-- End of KaTeX -->
-    <h1>Text for testing the Font</h1>
-  </body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+    <!-- Import Prism -->
+    <link rel="stylesheet" type="text/css" href="css/solarized-dark.css">
+    <script type="text/javascript" src="javascript/prism.js"></script>
+
+    <title>Hal Wayland</title>
+    <base href="https://halwayland.com/index.html">
+
+</head>
+
+<body class="blue-grey darken-4 blue-grey-text text-lighten-4">
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col s2"></div>
+                <div class="col s8">
+                    <h1>Hal Wayland</h1>
+                    <p>My real name is Martin Mikušát, but I use Hal Wayland as a pseudonym so you don't have to struggle trying to pronounce my last name. You can thank me later.</p>
+                    <p>I'm a student, currently working through the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101Udacity">Deep Learning Foundations Nanodegree</a>.</p>
+                    <p>I use this website to take notes for things I learn. You can read <a href="/notes/notes.html">all of my notes here</a>.
+                </div>
+                <div class="col s2"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer blue-grey darken-4 blue-grey-text text-lighten-4 z-depth-5">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><span class="fa fa-github fa-fw"></span><a class="grey-text text-lighten-3" href="https://github.com/HalWayland">GitHub</a></li>
+                        <li><span class="fa fa-twitter fa-fw"></span><a class="grey-text text-lighten-3" href="https://twitter.com/Hal_Wayland">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>

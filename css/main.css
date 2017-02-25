@@ -1,7 +1,70 @@
+html {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500!important;
+}
+
+h1 {
+    font-family: Merriweather, serif;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 p {
-  font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
 }
+
+pre[class*="language-"], :not(pre)>code[class*="language-"] {
+    border: none!important;
+    box-shadow: 1px 1px 0.3em -0.1em #071D23 inset!important;
+}
+
+a {
+  color:#78909c!important;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Animated link underlines */
+a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+}
+a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+a:hover:before {
+    width: 100%;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+a:hover:after {
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+/* Animated link underlines */
