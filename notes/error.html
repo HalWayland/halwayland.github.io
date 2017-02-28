@@ -30,57 +30,56 @@
             <div class="col s2"></div>
             <div class="col s8">
                 <h1 class="center-align">Error</h1>
-<p>First, we need to know how wrong our predictions are. We can use the sum of the squared errors to determine this.</p>
-<p id="error1" class="center-align" style="font-size:x-large;" ></p>
-<script>
-    katex.render("E = \\frac{1}{2}\\sum_{\\mu} (y^\\mu - \\hat{y}^\\mu)^2", error1);
-</script>
-<div class="center-align">
-<span id="error2" data-target="error_term" class="modal-trigger" style="font-size:x-large;animation-delay: 0.5s;" ></span>
-<script>
-    katex.render("E = \\frac{1}{2}\\sum_{\\mu} (y^\\mu", error2);
-</script>
+                <p>First, we need to know how wrong our predictions are. We can use the sum of the squared errors to determine this.</p>
+                <p id="error1" class="center-align" style="font-size:x-large;"></p>
+                <script>
+                    katex.render("E = \\frac{1}{2}\\sum_{\\mu} (y^\\mu - \\hat{y}^\\mu)^2", error1);
+                </script>
+                <div class="center-align">
+                    <span id="error2" data-target="error_term" class="modal-trigger" style="font-size:x-large;animation-delay: 0.5s;"></span>
+                    <script>
+                        katex.render("E = \\frac{1}{2}\\sum_{\\mu} (y^\\mu", error2);
+                    </script>
 
-<span id="error3" style="font-size:x-large"></span>
-<script>
-    katex.render(" - f(\\sum_{i} w_{i}x_{i}^\\mu))^2", error3);
-</script>
-</div>
-<p id="mu" style="font-size:x-large;"></p>
-<script>
-    katex.render("\\mu \\text{ - Data Records}", mu);
-</script>
+                    <span id="error3" style="font-size:x-large"></span>
+                    <script>
+                        katex.render(" - f(\\sum_{i} w_{i}x_{i}^\\mu))^2", error3);
+                    </script>
+                </div>
+                <p id="mu" style="font-size:x-large;"></p>
+                <script>
+                    katex.render("\\mu \\text{ - Data Records}", mu);
+                </script>
             </div>
             <div class="col s2"></div>
         </div>
     </div>
     <div id="learning_rate" class="modal blue-grey darken-4 blue-grey-text text-lighten-4">
-      <div class="modal-content">
-        <h4>Learning Rate</h4>
-        <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
-        <p>Smaller values make the learning more accurate and lower the chance of overshooting the global minimum. Higher values make the model train quicker.</p>
-      </div>
+        <div class="modal-content">
+            <h4>Learning Rate</h4>
+            <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
+            <p>Smaller values make the learning more accurate and lower the chance of overshooting the global minimum. Higher values make the model train quicker.</p>
+        </div>
     </div>
     <div id="error_term" class="modal blue-grey darken-4 blue-grey-text text-lighten-4">
-      <div class="modal-content">
-        <h4>Error Term</h4>
-        <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
-        <div id="new_projects"></div>
-      </div>
+        <div class="modal-content">
+            <h4>Error Term</h4>
+            <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
+            <div id="new_projects"></div>
+        </div>
     </div>
     <script>
-    $(document).ready(function() {
-    $('.modal').modal();
-    });
+        $(document).ready(function() {
+            $('.modal').modal();
+        });
     </script>
-<script>
-$(document).ready(function () {
-        $("#error2").click(function(){
-            $("#new_projects").load("gradient_descent.html #gradient_descent");
-        })});
-    //remove this });
-
-</script>
+    <script>
+        $(document).ready(function() {
+            $("#error2").click(function() {
+                $("#new_projects").load("gradient_descent.html #gradient_descent");
+            })
+        });
+    </script>
 </body>
 
 </html>
