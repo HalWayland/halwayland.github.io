@@ -1,0 +1,146 @@
+/* Adjusting Material CSS */
+html {
+    font-family: Montserrat, sans-serif;
+}
+
+h1 {
+    font-family: Merriweather, serif;
+    text-shadow: 0px 4px 5px rgba(0,0,0,0.35);
+}
+
+h3 {
+    font-family: Merriweather, serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.35);
+}
+
+h4 {
+    font-family: Merriweather, serif;
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.35);
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+    font-family: Montserrat, sans-serif;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+p {
+    font-family: Montserrat, sans-serif;
+    font-size: medium;
+}
+.collapsible-header {
+  border-bottom: 0px!important;
+}
+.collapsible-body {
+  border-bottom: 0px!important;
+}
+
+/* Adjusting Material CSS */
+
+/* Adjusting Prism */
+pre[class*="language-"], :not(pre)>code[class*="language-"] {
+    border: none!important;
+    box-shadow: 1px 1px 0.3em -0.1em #071D23 inset!important;
+}
+/* Adjusting Prism */
+
+a {
+  color:#eceff1!important;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+/* Animated link underlines */
+a:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+}
+a:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+a:hover:before {
+    width: 100%;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+a:hover:after {
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+/* Animated link underlines */
+
+/*Shine and zoom for Modals highlighting*/
+@keyframes shine {
+  from {color: #90a4ae;}
+  to {color: #FFF;}
+}
+
+.shine {
+  text-shadow: 0px 3px 3px rgba(0,0,0,0.5);
+  color:#90a4ae;
+  animation-name: shine;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+}
+
+.underline {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.underline:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    height: 1px;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+}
+.underline:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    height: 1px;
+    width: 0;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+.underline:hover:before {
+    width: 100%;
+    background: #607d8b;
+    transition: width .5s ease;
+}
+.underline:hover:after {
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+/*Shine and zoom for Modals highlighting*/
