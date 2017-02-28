@@ -54,7 +54,6 @@
 <script>
     katex.render("\\mu \\text{ - Data Records}", mu);
 </script>
-<div id="test">Text</div>
 <div id="new_projects"></div>
             </div>
             <div class="col s2"></div>
@@ -71,6 +70,7 @@
       <div class="modal-content">
         <h4>Error Term</h4>
         <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
+        <div id="new_projects"></div>
       </div>
     </div>
     <script>
@@ -80,7 +80,7 @@
     </script>
 <script>
 $(document).ready(function () {
-        $("#test").click(function(){
+        $("#error2").click(function(){
             $("#new_projects").load("gradient_descent.html #gradient_descent");
         })});
     //remove this });
