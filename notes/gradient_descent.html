@@ -8,10 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="../main.css">
     <!-- Import Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <!-- Import Fonts from Google -->
-    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Merriweather|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet">
     <!-- Import Katex -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
@@ -22,67 +21,69 @@
     <title>Gradient Descent</title>
 </head>
 
-<body class="blue-grey darken-4 blue-grey-text text-lighten-4">
+<body class="blue-grey darken-4 blue-grey-text text-lighten-3">
     <div class="container">
         <div class="row">
-            <div class="col s2"></div>
-            <div class="col s8">
-                <h1 class="center-align" id="gradient_descent">Gradient Descent</h1>
-                <p>We use Gradient Descent to update the weights in order to lower the prediction error of our model. We take the sum of the current weight and the weight step.</p>
-                <div class="center-align">
-                    <span id="weight_update" style="font-size:x-large;"></span>
-                    <script>
-                        katex.render("w_i = w_i + \\Delta w_i", weight_update);
-                    </script>
+            <div class="col m1 l2"></div>
+            <div class="col s12 m10 l8">
+                <h1 class="center-align">Gradient Descent</h1>
+                <div id="gradient-descent-content">
+                    <p>We use Gradient Descent to update the weights in order to lower the prediction error of our model. We take the sum of the current weight and the weight step.</p>
+                    <div class="center-align">
+                        <span id="weight_update" class="katex-style"></span>
+                        <script>
+                            katex.render("w_i = w_i + \\Delta w_i", weight_update);
+                        </script>
+                    </div>
+                    <p>We take a step in the direction opposite of the gradient of the error at the current weight.</p>
+                    <div class="center-align">
+                        <!-- Gradient Descent step -->
+                        <span id="weight_step1" class="katex-style"></span>
+                        <script>
+                            katex.render("\\Delta w = - \\text{gradient}", weight_step1);
+                        </script>
+                        <!-- Gradient Descent step -->
+                    </div>
+                    <p>Weight step is the learning rate times the error term times the input value.</p>
+                    <div class="center-align">
+                        <!-- Weight step -->
+                        <span id="weight_step2" class="katex-style"></span>
+                        <script>
+                            katex.render("w_i = w_i +", weight_step2);
+                        </script>
+                        <!-- Weight step -->
+                        <!-- Learning rate -->
+                        <span id="learning_rate_katex" data-target="learning_rate" class="shine underline modal-trigger katex-style" style="animation-delay: 0.5s;"></span>
+                        <script>
+                            katex.render("\\eta", learning_rate_katex);
+                        </script>
+                        <!-- Learning rate -->
+                        <!-- Error term -->
+                        <span id="weight_step3" data-target="error_term" class="shine underline modal-trigger katex-style" style="animation-delay: 0.6s;"></span>
+                        <script>
+                            katex.render("\\delta", weight_step3);
+                        </script>
+                        <!-- Error term -->
+                        <!-- Input value -->
+                        <span id="weight_step4" class="katex-style"></span>
+                        <script>
+                            katex.render("x_i", weight_step4);
+                        </script>
+                        <!-- Input value -->
+                    </div>
+                    <div class="center-align">
+                        <!-- Error term definition -->
+                        <span id="error_term" data-target="modal1" class="modal-trigger katex-style" style="animation-delay: 0.5s;"></span>
+                        <script>
+                            katex.render("\\delta = (y - \\hat y)f'(h)", error_term);
+                        </script>
+                        <!-- Error term definition -->
+                    </div>
                 </div>
-                <p>We take a step in the direction opposite of the gradient of the error at the current weight.</p>
-                <div class="center-align">
-                    <!-- Gradient Descent step -->
-                    <span id="weight_step1" style="font-size:x-large;"></span>
-                    <script>
-                        katex.render("\\Delta w = - \\text{gradient}", weight_step1);
-                    </script>
-                    <!-- Gradient Descent step -->
-                </div>
-                <p>Weight step is the learning rate times the error term times the input value.</p>
-                <div class="center-align">
-                    <!-- Weight step -->
-                    <span id="weight_step2" style="font-size:x-large;"></span>
-                    <script>
-                        katex.render("w_i = w_i +", weight_step2);
-                    </script>
-                    <!-- Weight step -->
-                    <!-- Learning rate -->
-                    <span id="learning_rate_katex" data-target="learning_rate" class="shine underline modal-trigger" style="font-size:x-large;animation-delay: 0.5s;"></span>
-                    <script>
-                        katex.render("\\eta", learning_rate_katex);
-                    </script>
-                    <!-- Learning rate -->
-                    <!-- Error term -->
-                    <span id="weight_step3" data-target="error_term" class="shine underline modal-trigger" style="font-size:x-large;animation-delay: 0.6s;"></span>
-                    <script>
-                        katex.render("\\delta", weight_step3);
-                    </script>
-                    <!-- Error term -->
-                    <!-- Input value -->
-                    <span id="weight_step4" style="font-size:x-large;"></span>
-                    <script>
-                        katex.render("x_i", weight_step4);
-                    </script>
-                    <!-- Input value -->
-                </div>
-                <div class="center-align">
-                    <!-- Error term definition -->
-                    <span id="error_term" data-target="modal1" class="modal-trigger" style="font-size:x-large;animation-delay: 0.5s;"></span>
-                    <script>
-                        katex.render("\\delta = (y - \\hat y)f'(h)", error_term);
-                    </script>
-                    <!-- Error term definition -->
-                </div>
-                <div class="col s2"></div>
+                <div class="col m1 l2"></div>
             </div>
         </div>
-        <div id="learning_rate" class="modal blue-grey darken-4 blue-grey-text text-lighten-4">
+        <div id="learning_rate" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
             <div id="learning_rate_modal" class="modal-content">
                 <h4>Learning Rate</h4>
                 <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
@@ -96,10 +97,13 @@
                 })
             });
         </script>
-        <div id="error_term" class="modal blue-grey darken-4 blue-grey-text text-lighten-4">
+        <div id="error_term" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
             <div class="modal-content">
                 <h4>Error Term</h4>
                 <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
+            </div>
+            <div class="modal-footer blue-grey darken-4 blue-grey-text text-lighten-3">
+              <a href="error.html" class="waves-effect btn-flat">Go to this page</a>
             </div>
         </div>
         <script>
