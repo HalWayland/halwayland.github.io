@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col m1 l2"></div>
             <div class="col s12 m10 l8">
-                <h1 class="center-align">Gradient Descent</h1>
+                <h1 class="center-align">Gradient descent</h1>
                 <div id="gradient-descent-content">
                     <p>We use Gradient Descent to update the weights in order to lower the prediction error of our model. We take the sum of the current weight and the weight step.</p>
                     <div class="center-align">
@@ -50,7 +50,7 @@
                         </script>
                         <!-- Weight step -->
                         <!-- Learning rate -->
-                        <span id="learning_rate_katex" data-target="learning_rate" class="shine underline modal-trigger katex-style" style="animation-delay: 0.5s;"></span>
+                        <span id="learning_rate_katex" data-target="learning_rate_modal" class="shine underline modal-trigger katex-style" style="animation-delay: 0.5s;"></span>
                         <script>
                             katex.render("\\eta", learning_rate_katex);
                         </script>
@@ -80,20 +80,8 @@
                 <div class="col m1 l2"></div>
             </div>
         </div>
-        <div id="learning_rate" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
-            <div id="learning_rate_modal" class="modal-content">
-                <h4>Learning Rate</h4>
-                <p>Arbitrary scaling parameter. We use it to help define how big of a Gradient Descent step we want to use each learning cycle.</p>
-                <p>Smaller values make the learning more accurate and lower the chance of overshooting the global minimum. Higher values make the model train quicker.</p>
-            </div>
-        </div>
-        <script>
-            $(document).ready(function() {
-                $("#learning_rate_katex").click(function() {
-                    $("#learning_rate_modal").load("learning_rate.html #learning_rate_content");
-                })
-            });
-        </script>
+
+        <!-- Error Term Modal -->
         <div id="error_term" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
             <div class="modal-content">
                 <h4>Error Term</h4>
@@ -103,6 +91,28 @@
                 <a href="error.html" class="waves-effect btn-flat">Go to this page</a>
             </div>
         </div>
+        <!-- Error Term Modal -->
+
+        <!-- Learning Rate Modal -->
+        <div id="learning_rate_modal" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
+            <div class="learning_rate_content modal-content">
+                <h4>Learning rate</h4>
+                <div id="insert_learning_rate_content"></div>
+            </div>
+            <div class="modal-footer blue-grey darken-4 blue-grey-text text-lighten-3">
+                <a href="learning_rate.html" class="waves-effect btn-flat">Go to this page</a>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $("#learning_rate_katex").click(function() {
+                    $("#insert_learning_rate_content").load("learning_rate.html #learning_rate_content");
+                })
+            });
+        </script>
+        <!-- Learning Rate Modal -->
+
         <script>
             $(document).ready(function() {
                 $('.modal').modal();
