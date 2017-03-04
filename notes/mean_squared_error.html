@@ -23,77 +23,18 @@
             <div class="col s12 m10 l8">
                 <h1 class="center-align">Mean Squared Error</h1>
                 <div id="mean_squared_error_content">
-                    <p>The same thing as <a href="sum_of_squared_errors" class="underline">Sum of Squared Errors</a>, except we divide by the amount of input values we have.</p>
+                    <p>The same thing as <a href="sum_of_squared_errors" class="underline">Sum of Squared Errors</a>, except we also divide by the amount of input values we have - "m"</p>
                     <div class="center-align">
-
-                        <div class="center-align">
-                            <div id="amount_of_input_values_katex" class="katex-style center-align"></div>
-                            <script>
-                                katex.render("m \\text{ - the amount of input values}", amount_of_input_values_katex);
-                            </script>
-                        </div>
-
                         <span id="mean_squared_error_katex" class="katex-style"></span>
                         <script>
-                            katex.render("\\displaystyle E=\\frac{1}{2m} \\sum_\\mu(", mean_squared_error_katex);
+                            katex.render("\\displaystyle E=\\frac{1}{2m} \\sum_\\mu(y^\\mu - \\hat y^\\mu)^2", mean_squared_error_katex);
                         </script>
-
-                        <!-- Input values KaTeX -->
-                        <span id="input_values_katex" data-target="input_values_modal" class="modal-trigger katex-style shine underline"></span>
-                        <script>
-                            katex.render("\\displaystyle y", input_values_katex);
-                        </script>
-                        <!-- Input values KaTeX -->
-
-                        <span id="mean_squared_error_katex_2" class="katex-style"></span>
-                        <script>
-                            katex.render("\\displaystyle ^\\mu - \\hat y^\\mu)", mean_squared_error_katex_2);
-                        </script>
-
-<!-- Square -->
-                        <span id="square_katex" data-target="square_modal" class="modal-trigger katex-style shine underline-super"></span>
-                        <script>
-                            katex.render("\\displaystyle ^2", square_katex);
-                        </script>
-<!-- Square -->
 
                     </div>
-
                 </div>
                 <div class="col m1 l2"></div>
             </div>
         </div>
-        <!-- Imput values Modal -->
-        <div id="input_values_modal" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
-            <div class="modal-content">
-                <h4>Input values</h4>
-                <div id="insert_input_values_content"></div>
-            </div>
-            <div class="modal-footer blue-grey darken-4 blue-grey-text text-lighten-3">
-                <a href="input_values.html" class="waves-effect btn-flat">Go to this page</a>
-            </div>
-        </div>
-
-        <div id="square_modal" class="modal blue-grey darken-4 blue-grey-text text-lighten-3">
-            <div class="modal-content">
-                <div>We square the difference of the input value and the prediction in order to always get a positive results, while also punishing bigger errors in our predictions more than smaller ones.</div>
-            </div>
-        </div>
-
-
-        <script>
-            $(document).ready(function() {
-                $("#input_values_katex").click(function() {
-                    $("#insert_input_values_content").load("input_values.html #input_values_content");
-                })
-            });
-        </script>
-        <!-- Imput values Modal -->
-        <script>
-            $(document).ready(function() {
-                $('.modal').modal();
-            });
-        </script>
 </body>
 
 </html>
