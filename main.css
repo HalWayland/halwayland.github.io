@@ -62,17 +62,20 @@ a:active, a:hover {
 }
 
 .katex-style {
+  margin:10px 0;
     font-size: 1.26rem;
 }
 
 @media only screen and (min-width: 601px) {
     .katex-style {
+      margin:20px 0;
         font-size:1.49rem;
     }
 }
 
 @media only screen and (min-width: 993px) {
     .katex-style {
+      margin:30px 0;
         font-size:1.7rem;
     }
 }
@@ -182,7 +185,7 @@ a:hover:after {
     animation-timing-function: ease-out;
 }
 
-.underline {
+.underline, .underline-super{
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -211,16 +214,39 @@ a:hover:after {
     transition: width .5s ease;
 }
 
-.underline:hover:before {
+.underline:hover:before, .underline-super:hover:before{
     width: 100%;
     background: #607d8b;
     transition: width .5s ease;
 }
 
-.underline:hover:after {
+.underline:hover:after, .underline-super:hover:after {
     width: 100%;
     background: transparent;
     transition: all 0s ease;
+}
+
+.underline-super:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    height: 1px;
+    width: 0;
+    transition: width 0s ease, background .5s ease;
+}
+
+.underline-super:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    height: 1px;
+    width: 0;
+    background: #607d8b;
+    transition: width .5s ease;
 }
 
 
